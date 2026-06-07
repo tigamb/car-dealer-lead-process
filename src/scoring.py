@@ -1,23 +1,3 @@
-"""
-Lead Scoring Module.
-
-Calculates a score from 0 to 100 based on:
-
-  From API enrichment:
-    lead_priority = "High"              → +40
-    lead_priority = "Medium"            → +20
-    lead_priority = "Low"               →  +0
-    email_insights.trust_level = "High" → +20
-    phone_insights.verified = true      → +20
-
-  From car catalog (car_models.txt):
-    category = "Luxury"                 → +20
-    category = "Electric"               → +15
-    availability = "In Stock"           → +10
-
-  Max possible score = 100
-"""
-
 
 from typing import Optional
 from src.models import CarInfo

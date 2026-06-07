@@ -27,10 +27,7 @@ MAX_RETRIES = 3
     reraise=False,
 )
 async def _call_enrich_api(email: str, phone: str, area: str) -> Optional[dict]:
-    """
-    פונקציה פנימית — הקריאה עצמה ל-API עם retry.
-    מתחילה ב-_ כי לא אמורים לקרוא לה ישירות מבחוץ.
-    """
+    
     payload = {
         "email": email.lower() if email else "",
         "phone": phone.lower() if phone else "",
@@ -52,10 +49,7 @@ async def _call_enrich_api(email: str, phone: str, area: str) -> Optional[dict]:
 
 
 async def enrich_lead(email: str, phone: str, area: str) -> Optional[dict]:
-    """
-    פונקציה ציבורית — זו שהפייפליין קורא לה.
-    עוטפת את _call_enrich_api ומבטיחה שלעולם לא תזרוק exception.
-    """
+    
     try:
         data = await _call_enrich_api(email, phone, area)
         if data:

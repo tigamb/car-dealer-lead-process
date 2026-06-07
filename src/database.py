@@ -1,12 +1,3 @@
-"""
-Database Module.
-
-Async SQLite persistence using aiosqlite.
-Stores fully enriched lead objects as JSON blobs with indexed metadata columns.
-
-Design decision: SQLite נבחר בגלל zero-config — אין צורך ב-container נוסף.
-בסביבת production היינו משתמשים ב-PostgreSQL.
-"""
 
 import json
 from typing import Optional, Any
@@ -21,7 +12,7 @@ DB_PATH = "leads.db"
 
 
 async def init_db() -> None:
-    """יוצר את טבלת הלידים אם לא קיימת — רץ פעם אחת בעליית השרת."""
+    
     async with aiosqlite.connect(DB_PATH) as db:
         await db.execute("""
             CREATE TABLE IF NOT EXISTS leads (
@@ -60,7 +51,7 @@ async def save_lead(lead: dict[str, Any]) -> None:
 
 
 async def get_lead(lead_id: str) -> Optional[dict]:
-    """מחזיר ליד בודד לפי ID. מחזיר None אם לא נמצא."""
+
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
         async with db.execute(
@@ -73,7 +64,6 @@ async def get_lead(lead_id: str) -> Optional[dict]:
 
 
 async def get_all_leads(limit: int = 100, offset: int = 0) -> list[dict]:
-    """מחזיר את כל הלידים, החדשים ראשון, עם pagination."""
     async with aiosqlite.connect(DB_PATH) as db:
         db.row_factory = aiosqlite.Row
         async with db.execute(

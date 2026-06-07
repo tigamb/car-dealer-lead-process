@@ -1,14 +1,3 @@
-"""
-Car Dealer Lead Processing Automation — Main Application
-
-FastAPI app exposing the lead processing pipeline.
-
-Endpoints:
-  POST /api/leads          — Submit a lead (async processing)
-  GET  /api/leads          — List all processed leads (paginated)
-  GET  /api/leads/{id}     — Retrieve a specific lead
-  GET  /health             — Health check
-"""
 
 from contextlib import asynccontextmanager
 from typing import Any
@@ -32,9 +21,6 @@ setup_logging()
 logger = get_logger("main")
 
 
-
-# cache של נתוני העסק — נטען פעם אחת בעליית השרת
-# LeadPipeline instance נשמר כאן ומשותף לכל הבקשות
 app_state: dict[str, Any] = {
     "pipeline": None,
 }
@@ -42,19 +28,11 @@ app_state: dict[str, Any] = {
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """
-    מגדיר מה קורה בעליית השרת ובירידתו.
+   
     
-    Startup:
-      - טוען branch_config.xlsx
-      - טוען car_models.txt
-      - יוצר instance של LeadPipeline עם הנתונים
-      - מאתחל את ה-DB
-    
-    Shutdown:
-      - לוג של סגירה
-    """
-    # ── Startup ──────────────────────────────────────────────────────
+    #========================================================================
+    # Startup
+    #========================================================================
     logger.info("Starting up")
 
     branches = load_branch_config("data/branch_config.xlsx")
@@ -72,9 +50,12 @@ async def lifespan(app: FastAPI):
     await init_db()
     logger.info("Startup complete")
 
-    yield  # כאן השרת רץ ומטפל בבקשות
+    yield
 
-    # ── Shutdown ─────────────────────────────────────────────────────
+    
+    #========================================================================
+    # Shutdown
+    #========================================================================
     logger.info("Shutting down")
 
 
@@ -86,8 +67,10 @@ app = FastAPI(
 )
 
 
-# ── Endpoints ────────────────────────────────────────────────────────────────
 
+#========================================================================
+# Endpoints
+#========================================================================
 @app.post(
     "/api/leads",
     status_code=202,
@@ -96,11 +79,7 @@ app = FastAPI(
     summary="Submit a lead for processing",
 )
 async def submit_lead(lead: LeadInput):
-    """
-    מקבל ליד, מריץ אותו דרך הפייפליין, ומחזיר תוצאה.
-    202 = התקבל ועובד בהצלחה
-    422 = נדחה בולידציה
-    """
+    
     logger.info(
         "Lead received",
         first_name=lead.FirstName,

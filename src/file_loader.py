@@ -20,10 +20,7 @@ DEFAULT_BRANCH = BranchInfo(
 #
 #========================================================================
 def load_branch_config(path: str) -> dict[str, BranchInfo]:
-    """
-    קורא את branch_config.xlsx ומחזיר dict עם key=branch_id.
-    במקרה של שגיאה — מחזיר את ברירת המחדל.
-    """
+   
     try:
         import openpyxl
         wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
@@ -69,17 +66,13 @@ def load_branch_config(path: str) -> dict[str, BranchInfo]:
 #
 #========================================================================
 def parse_car_models(path: str) -> dict[str, CarInfo]:
-    """
-    קורא את car_models.txt ומחזיר dict עם key=model_id.
-    הקובץ בנוי מבלוקים — כל בלוק = רכב אחד, מופרד בקווים.
-    """
+
     try:
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
 
         cars: dict[str, CarInfo] = {}
 
-        # מפצל את הקובץ לבלוקים לפי שורות של מקפים
         blocks = re.split(r"-{10,}", content)
 
         for block in blocks:
@@ -87,14 +80,13 @@ def parse_car_models(path: str) -> dict[str, CarInfo]:
             if not block:
                 continue
 
-            # מחלץ key:value מכל שורה בבלוק
             data: dict[str, str] = {}
             for line in block.splitlines():
                 if ":" in line:
                     key, _, value = line.partition(":")
                     data[key.strip()] = value.strip()
 
-            # אם אין Model ID — זה לא בלוק של רכב (למשל כותרת)
+           
             model_id = data.get("Model ID", "")
             if not model_id:
                 continue
