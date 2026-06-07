@@ -182,11 +182,13 @@ Verify Docker build
 
 ### Unit Tests
 ```bash
-pip install pytest
-pytest tests/
+python -m pytest tests/ -v
 ```
 
 הטסטים בודקים:
-- ולידציה של אימייל (פורמט, דומיינים חד פעמיים)
-- ולידציה של טלפון ישראלי
-- ולידציה של ליד מלא
+
+| קובץ | מה נבדק | טסטים |
+|------|---------|-------|
+| `test_validation.py` | אימייל, טלפון, שדות חובה | 12 |
+| `test_scoring.py` | ניקוד מ-API וקבצים, מקסימום 100 | 11 |
+| `test_routing.py` | HOT/WARM/COLD, WorkerCode | 7 |
