@@ -1,0 +1,191 @@
+================================================================================
+CAR MODELS CATALOG
+================================================================================
+
+--------------------------------------------------------------------------------
+Model ID: 90962_101
+Brand: Forthing
+Model: U-Tour
+Year: 2024
+Category: SUV
+Engine: Hybrid
+Price Range: 165,000 - 185,000 ILS
+Fuel Economy: 5.8L/100km
+Availability: In Stock
+Lead Time: 0 days
+Warranty: 7 years
+Popular: Yes
+Features:
+  - 7 seats
+  - Panoramic sunroof
+  - Advanced safety systems
+  - Leather interior
+
+--------------------------------------------------------------------------------
+Model ID: 90963_102
+Brand: Forthing
+Model: Friday
+Year: 2024
+Category: SUV
+Engine: Gasoline
+Price Range: 139,000 - 159,000 ILS
+Fuel Economy: 6.2L/100km
+Availability: In Stock
+Lead Time: 7 days
+Warranty: 7 years
+Popular: Yes
+Features:
+  - 5 seats
+  - Digital cockpit
+  - Apple CarPlay / Android Auto
+  - Rear camera
+
+--------------------------------------------------------------------------------
+Model ID: 90964_103
+Brand: Forthing
+Model: T5 EVO
+Year: 2024
+Category: SUV
+Engine: Gasoline
+Price Range: 119,000 - 135,000 ILS
+Fuel Economy: 6.5L/100km
+Availability: In Stock
+Lead Time: 14 days
+Warranty: 7 years
+Popular: No
+Features:
+  - 5 seats
+  - Cruise control
+  - Climate control
+  - USB charging ports
+
+--------------------------------------------------------------------------------
+Model ID: 90965_104
+Brand: Forthing
+Model: E-Star
+Year: 2024
+Category: Electric
+Engine: Electric
+Price Range: 195,000 - 220,000 ILS
+Fuel Economy: 15kWh/100km
+Availability: Pre-order
+Lead Time: 60 days
+Warranty: 8 years
+Popular: Yes
+Features:
+  - 5 seats
+  - 400km range
+  - Fast charging
+  - Autopilot assist
+  - Premium sound system
+
+--------------------------------------------------------------------------------
+Model ID: 90966_105
+Brand: Forthing
+Model: Thunder
+Year: 2024
+Category: Pickup
+Engine: Diesel
+Price Range: 155,000 - 175,000 ILS
+Fuel Economy: 7.8L/100km
+Availability: In Stock
+Lead Time: 21 days
+Warranty: 5 years
+Popular: No
+Features:
+  - 5 seats
+  - 4x4 capability
+  - 1 ton cargo capacity
+  - Towing package
+
+--------------------------------------------------------------------------------
+Model ID: 90967_106
+Brand: Forthing
+Model: Cargo Van
+Year: 2024
+Category: Commercial
+Engine: Diesel
+Price Range: 125,000 - 145,000 ILS
+Fuel Economy: 8.2L/100km
+Availability: In Stock
+Lead Time: 10 days
+Warranty: 3 years
+Popular: No
+Features:
+  - 3 seats
+  - Large cargo space
+  - Sliding door
+  - Commercial warranty
+
+--------------------------------------------------------------------------------
+Model ID: 90968_107
+Brand: Forthing
+Model: U-Tour Premium
+Year: 2024
+Category: Luxury
+Engine: Hybrid
+Price Range: 215,000 - 245,000 ILS
+Fuel Economy: 5.5L/100km
+Availability: Pre-order
+Lead Time: 45 days
+Warranty: 7 years
+Popular: Yes
+Features:
+  - 7 seats
+  - Massage seats
+  - Heads-up display
+  - 360° cameras
+  - Premium leather
+  - Ambient lighting
+
+--------------------------------------------------------------------------------
+Model ID: 90969_108
+Brand: Forthing
+Model: City Runner
+Year: 2024
+Category: Economy
+Engine: Gasoline
+Price Range: 89,000 - 105,000 ILS
+Fuel Economy: 5.2L/100km
+Availability: In Stock
+Lead Time: 0 days
+Warranty: 5 years
+Popular: Yes
+Features:
+  - 5 seats
+  - Compact design
+  - Easy parking
+  - Low maintenance
+
+--------------------------------------------------------------------------------
+Model ID: 90970_109
+Brand: Forthing
+Model: Family Plus
+Year: 2024
+Category: Family
+Engine: Gasoline
+Price Range: 145,000 - 165,000 ILS
+Fuel Economy: 6.8L/100km
+Availability: In Stock
+Lead Time: 14 days
+Warranty: 7 years
+Popular: Yes
+Features:
+  - 7 seats
+  - Child safety features
+  - Multiple storage compartments
+  - Entertainment system
+
+================================================================================
+CATEGORIES
+================================================================================
+
+SUV: Sport Utility Vehicle - versatile and spacious
+Electric: Zero emissions electric vehicles
+Pickup: Trucks with cargo bed
+Commercial: Vehicles for business use
+Luxury: Premium vehicles with advanced features
+Economy: Affordable and fuel-efficient
+Family: Spacious vehicles for families
+
+================================================================================

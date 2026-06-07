@@ -1,0 +1,19 @@
+services:
+
+  # ── האפליקציה שלנו ────────────────────────────────────────────────
+  app:
+    build: .                        # בנה את ה-container מה-Dockerfile שבתיקייה הנוכחית
+    ports:
+      - "8000:8000"                 # חיצוני:פנימי — חושף פורט 8000 למחשב שלנו
+    volumes:
+      - ./data:/app/data            # מחבר את תיקיית data המקומית ל-container
+    depends_on:
+      - mock-api                    # מחכה שה-mock-api יעלה קודם
+    environment:
+      - PYTHONUNBUFFERED=1          # לוגים מופיעים מיידית בטרמינל
+
+  # ── ה-Mock API ────────────────────────────────────────────────────
+  mock-api:
+    build: ./mock-api               # בנה מה-Dockerfile שבתיקיית mock-api
+    ports:
+      - "8001:8001"                 # חושף פורט 8001
