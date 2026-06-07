@@ -1,13 +1,10 @@
-"""
-Unit tests for the validation module.
-Run with: pytest tests/
-"""
 
 from src.validation import validate_email, validate_phone, validate_lead
 
 
-# ── Email Tests ───────────────────────────────────────────────────────────────
-
+#========================================================================
+# Email Tests
+#========================================================================
 def test_valid_email():
     valid, error = validate_email("danny.cohen@gmail.com")
     assert valid == True
@@ -28,8 +25,9 @@ def test_empty_email():
     assert valid == False
 
 
-# ── Phone Tests ───────────────────────────────────────────────────────────────
-
+#========================================================================
+# Phone Tests
+#========================================================================
 def test_valid_phone():
     valid, error = validate_phone("0542100319")
     assert valid == True
@@ -47,8 +45,9 @@ def test_empty_phone():
     assert valid == False
 
 
-# ── Lead Tests ────────────────────────────────────────────────────────────────
-
+#========================================================================
+# Lead Tests
+#========================================================================
 def test_valid_lead():
     lead = {
         "BranchID": "400",
@@ -95,4 +94,4 @@ def test_lead_missing_name():
     }
     valid, errors = validate_lead(lead)
     assert valid == False
-    assert len(errors) == 2  # שני שמות חסרים
+    assert len(errors) == 2

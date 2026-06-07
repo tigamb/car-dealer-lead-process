@@ -159,7 +159,7 @@ JSON-formatted structured logging לפרסור קל בסביבת containers. כ�
 
 | Score | Priority | Assigned To |
 |-------|----------|-------------|
-| ≥ 70 | HOT 🔥 | Branch Manager |
+| ≥ 70 | HOT | Branch Manager |
 | 40–69 | WARM | Worker (WorkerCode) |
 | < 40 | COLD | General Pool |
 
@@ -177,6 +177,9 @@ Install dependencies
 Run pytest (unit tests)
 Verify Docker build
 
+### איך לראות את הריצה?
+1. היכנס ל-repository בגיטהאב
+2. לחץ על טאב **"Actions"**
 
 הקובץ נמצא ב: `.github/workflows/ci.yml`
 

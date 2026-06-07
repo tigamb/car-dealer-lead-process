@@ -1,13 +1,13 @@
-"""
-Unit tests for the scoring module.
-"""
+
 
 from src.scoring import calculate_score
 from src.models import CarInfo
 
 
-# ── Enrichment Scoring Tests ──────────────────────────────────────────────────
 
+#========================================================================
+# Enrichment Scoring Tests
+#========================================================================
 def test_high_priority_score():
     enrichment = {"lead_priority": "High"}
     score = calculate_score(enrichment, None)
@@ -38,8 +38,9 @@ def test_no_enrichment():
     assert score == 0
 
 
-# ── Car Scoring Tests ─────────────────────────────────────────────────────────
-
+#========================================================================
+# Car Scoring Tests
+#========================================================================
 def test_luxury_car():
     car = CarInfo(
         model_id="1", model_name="Test",
@@ -68,8 +69,9 @@ def test_car_in_stock():
     assert score == 10
 
 
-# ── Combined Scoring Tests ────────────────────────────────────────────────────
-
+#========================================================================
+# Combined Scoring Tests
+#========================================================================
 def test_max_score():
     enrichment = {
         "lead_priority": "High",

@@ -1,13 +1,11 @@
-"""
-Unit tests for the routing module.
-"""
 
 from src.routing import route_lead
 from src.models import BranchInfo
 
 
-# ── Branch fixture ────────────────────────────────────────────────────────────
-
+#========================================================================
+# Branch fixture
+#========================================================================
 # אובייקט סניף לשימוש בכל הטסטים
 BRANCH = BranchInfo(
     branch_id="400",
@@ -17,8 +15,9 @@ BRANCH = BranchInfo(
 )
 
 
-# ── HOT Tests ─────────────────────────────────────────────────────────────────
-
+#========================================================================
+# HOT Tests
+#========================================================================
 def test_hot_lead_score_70():
     priority, assigned_to = route_lead(70, BRANCH, "910290")
     assert priority == "HOT"
@@ -30,8 +29,9 @@ def test_hot_lead_score_100():
     assert assigned_to == "David Cohen"
 
 
-# ── WARM Tests ────────────────────────────────────────────────────────────────
-
+#========================================================================
+# WARM Tests
+#========================================================================
 def test_warm_lead_score_40():
     priority, assigned_to = route_lead(40, BRANCH, "910290")
     assert priority == "WARM"
@@ -49,8 +49,9 @@ def test_warm_lead_no_worker_code():
     assert assigned_to == "General Pool"
 
 
-# ── COLD Tests ────────────────────────────────────────────────────────────────
-
+#========================================================================
+# COLD Tests
+#========================================================================
 def test_cold_lead_score_39():
     priority, assigned_to = route_lead(39, BRANCH, "910290")
     assert priority == "COLD"
