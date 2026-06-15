@@ -81,7 +81,6 @@ app = FastAPI(
 async def submit_lead(lead: LeadInput):
     
     logger.info(
-        "Lead received",
         first_name=lead.FirstName,
         last_name=lead.LastName,
         branch_id=lead.BranchID,
@@ -109,14 +108,12 @@ async def submit_lead(lead: LeadInput):
 
 @app.get("/api/leads", response_model=LeadListResponse, summary="List all processed leads")
 async def list_leads(limit: int = 100, offset: int = 0):
-    """מחזיר את כל הלידים עם pagination."""
     leads = await get_all_leads(limit=limit, offset=offset)
     return LeadListResponse(count=len(leads), leads=leads)
 
 
 @app.get("/api/leads/{lead_id}", summary="Retrieve a specific lead")
 async def retrieve_lead(lead_id: str):
-    """מחזיר ליד בודד לפי ID."""
     lead = await get_lead(lead_id)
     if not lead:
         raise HTTPException(status_code=404, detail=f"Lead {lead_id!r} not found")
@@ -125,7 +122,6 @@ async def retrieve_lead(lead_id: str):
 
 @app.get("/health", response_model=HealthResponse, summary="Health check")
 async def health_check():
-    """בודק שהשרת עובד והנתונים נטענו."""
     pipeline: LeadPipeline = app_state["pipeline"]
     return HealthResponse(
         branches_loaded=len(pipeline.branches),

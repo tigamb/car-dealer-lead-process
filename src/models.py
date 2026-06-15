@@ -48,7 +48,7 @@ class CarInfo(BaseModel):
 # תשובות API
 #========================================================================
 class LeadResponse(BaseModel):
-    """תשובה כשהליד התקבל ועובד בהצלחה — HTTP 202"""
+    # תשובה כשהליד התקבל ועובד בהצלחה — HTTP 202
     lead_id: str
     status: str = "accepted"
     message: str = "Lead accepted and processed successfully"
@@ -58,7 +58,7 @@ class LeadResponse(BaseModel):
 
 
 class LeadRejectedResponse(BaseModel):
-    """תשובה כשהליד נדחה בולידציה — HTTP 422"""
+    # תשובה כשהליד נדחה בולידציה — HTTP 422
     lead_id: str
     status: str = "rejected"
     message: str = "Lead validation failed"
@@ -66,13 +66,13 @@ class LeadRejectedResponse(BaseModel):
 
 
 class LeadListResponse(BaseModel):
-    """תשובה לבקשת רשימת כל הלידים"""
+    # תשובה לבקשת רשימת כל הלידים
     count: int
     leads: list[dict[str, Any]]
 
 
 class HealthResponse(BaseModel):
-    """תשובת health check — האם השרת עובד"""
+    # תשובת health check — האם השרת עובד
     status: str = "healthy"
     branches_loaded: int
     cars_loaded: int
